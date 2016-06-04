@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="10000000" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="json" namespace="/" extends="json-default">
+		<interceptors>
+			<interceptor name="exceptionInterceptor"
+				class="cn.edu.fudan.anniversary.exception.ExceptionInterceptor"></interceptor>
+			<interceptor-stack name="exceptionStack">
+				<interceptor-ref name="exceptionInterceptor" />
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="json" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="exceptionStack" />
+		<global-results>
+			<result name="business_exception" type="chain">reminderOutput</result>
+			<result name="java_exception" type="chain">reminderOutput</result>
+		</global-results>
+
+		<action name="userLogin" class="userLoginAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,user.*
+				</param>
+			</result>
+		</action>
+		
+		<action name="userRegister" class="userRegisterAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,user.*
+				</param>
+			</result>
+		</action>
+		
+		<action name="userUpdate" class="userUpdateAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,user.*
+				</param>
+			</result>
+		</action>
+		
+		<action name="userModify" class="userModifyAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,user.*
+				</param>
+			</result>
+		</action>
+		
+		<action name="userGet" class="userGetAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,user.*
+				</param>
+			</result>
+		</action>
+		
+		<action name="userStatusGet" class="userStatusGetAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>		
+		</action>
+		
+		<action name="userLogout" class="userLogout">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>				
+		</action>
+		
+		<action name="retrivePassword" class="retrivePassword">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>				
+		</action>
+		
+		<action name="confirmRetrivePassword" class="confirmRetrivePassword">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>				
+		</action>
+		
+		<action name="videoGet" class="videoGetAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,video.*
+				</param>
+			</result>
+		</action>
+
+		<action name="videoListGet" class="videoListGetAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,videoList.*,total
+				</param>
+			</result>
+		</action>
+		
+		<action name="videoListGetByUsername" class="videoListGetByUsernameAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,videoList.*
+				</param>
+			</result>
+		</action>
+
+		<action name="videoDelete" class="videoDeleteAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>
+		</action>
+
+		<action name="videoBulkDelete" class="videoBulkDeleteAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>
+		</action>
+
+		<action name="videoUpdate" class="videoUpdateAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,video.*
+				</param>
+			</result>
+		</action>
+
+
+		<action name="liveListGet" class="liveListGetAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,videoList.*,total
+				</param>
+			</result>
+		</action>
+		
+		<action name="liveStart" class="liveStartAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,key
+				</param>
+			</result>
+		</action>
+		
+		<action name="liveOnUnpublish" class="liveOnUnpublishAction">
+			<result name="success">
+				/LiveSuccess.jsp
+			</result>		
+		</action>
+		
+		<action name="liveOnPublish" class="liveOnPublishAction">
+			<result name="success">
+				/LiveSuccess.jsp
+			</result>		
+		</action>
+
+		<action name="liveOnDvr" class="liveOnDvrAction">
+			<result name="success">
+				/LiveSuccess.jsp
+			</result>		
+		</action>
+
+		<action name="demooSave" class="demooSaveAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>
+		</action>
+		
+		<action name="demooListGet" class="demooListGetAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,demooList.*
+				</param>
+			</result>
+		</action>
+		
+		<action name="demooDelete" class="demooDeleteAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>
+		</action>
+
+		<action name="demooBulkDelete" class="demooBulkDeleteAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>
+		</action>
+
+		<action name="commentSave" class="commentSaveAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,comment.*
+				</param>
+			</result>
+		</action>
+
+		<action name="commentListGet" class="commentListGetAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,total,commentList.*
+				</param>
+			</result>
+		</action>
+		
+		<action name="commentDelete" class="commentDeleteAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>
+		</action>
+
+		<action name="commentBulkDelete" class="commentBulkDeleteAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>
+		</action>
+
+		<action name="reminderOutput" class="reminderOutputAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message
+				</param>
+			</result>
+		</action>
+		
+		<action name="userUploadHeadImg" class="userUploadHeadImgAction">
+			<result name="success" type="json">
+				<param name="includeProperties">
+					error_type,error_message,url
+				</param>
+			</result>
+		</action>
+		
+	</package>
+	<package name="normal_mapping" extends="struts-default" namespace="/r">
+		<interceptors>
+			<interceptor name="exceptionInterceptor"
+				class="cn.edu.fudan.anniversary.exception.ExceptionInterceptor"></interceptor>
+			<interceptor-stack name="exceptionStack">
+				<interceptor-ref name="exceptionInterceptor" />
+				<interceptor-ref name="defaultStack" />
+				
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="exceptionStack" />
+	</package>
+</struts>    

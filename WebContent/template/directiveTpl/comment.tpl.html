@@ -1,0 +1,38 @@
+<div class="comment-wrapper">
+	<div class="comment-icon">
+		<div class="comment-icon-icon"></div>
+		<div class="comment-icon-text">留言板</div>
+	</div>
+	<div class="comment-item" ng-repeat="item in items">
+		<div class="comment-item-head"></div>
+		<div class="comment-item-username">{{item.username+" :"}}</div>
+		<div class="comment-item-content">{{item.message}}</div>
+		<div id="more{{item.index}}" class="comment-item-more"
+			ng-click="openReply(item)">展开</div>
+		<div class="comment-item-time">{{item.time}}</div>
+
+		<div id="reply-panel{{item.index}}" class="comment-item-reply-wrapper">
+			<div class="reply-item" ng-repeat="reply in item.replys">
+				<div class="comment-item-reply-head"></div>
+				<div class="comment-item-reply-username">{{reply.username+"
+					:"}}</div>
+				<div class="comment-item-reply-content">{{reply.message}}</div>
+				<div class="comment-item-reply-time">回复时间：{{reply.time}}</div>
+			</div>
+			<div class="reply-inputer">
+				<!--<textarea id="reply{{$index}}"></textarea>-->
+				<textarea ng-model="item.myReply"></textarea>
+			</div>
+			<div class="reply-submit" ng-click="reply(item,$index)">提交</div>
+		</div>
+		<div class="comment-item-split"></div>
+	</div>
+	<div class="comment-item">
+		<div class="comment-get-more" ng-click="commentGetMore()">加载更多</div>
+	</div>
+
+	<div class="comment-inputer">
+		<textarea ng-model="commentContent"></textarea>
+	</div>
+	<div class="comment-submit" ng-click="comment()">提交</div>
+</div>

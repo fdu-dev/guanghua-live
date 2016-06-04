@@ -1,0 +1,356 @@
+/* The recommend block */
+
+.index-recommend-block{
+    height: 337px;
+}
+
+.index-recommend-img{
+    display: block;
+    width: 717px;
+    height: 337px;
+    overflow: hidden;
+}
+
+.index-recommend-img:hover{
+    cursor: pointer;
+}
+
+.index-recommend-text-block{
+    position: relative;
+    top:-337px;
+    left:717px;
+
+    width: 243px;
+    height: 337px;
+
+    background-color: #dc745b;
+}
+
+.index-recommend-text-img{
+    position: relative;
+    top:68px;
+    left:35px;
+
+    display: block;
+    width: 173px;
+    height: 61px;
+}
+
+.index-recommend-text-title{
+    position: relative;
+    top:90px;
+
+    height: 100px;
+
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+.index-recommend-text-title:before {
+    position: relative;
+    top: -5px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    content: url("../img/images/GHlive4_11.png");
+}
+
+.index-recommend-text-title a{
+    color : white;
+    text-decoration: none;
+}
+
+
+/*  The live block  */
+
+.index-live-block{
+    /*top:296px;*/
+}
+
+.index-live-title{
+    position: relative;
+    left:55px;
+
+    margin-top: 20px;
+    height: 80px;
+
+    font-size: 18px;
+    color: rgb(64,64,64);
+}
+
+/*The icon*/
+.index-live-title:before{
+    position: relative;
+    top:36px;
+    left:-33px;
+
+    display: block;
+    width: 33px;
+    height: 32px;
+
+    content: url("../img/images/GHlive4_15.png");
+}
+
+.index-live-video-block{
+    margin-left: 12px;
+    height: 100px;
+}
+
+.index-live-video{
+    float: left;
+
+    margin-right: 30px;
+
+    width:149px;
+    height: 100px;
+
+}
+
+.index-live-video-real-img{
+    width:149px;
+    height:100px;
+}
+
+.index-live-video-mask{
+    position:absolute;
+    z-index:2;
+
+    width: 149px;
+    height: 100px;
+	top: 0px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.index-live-video-mask:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0);
+}
+
+.index-live-video-icon{
+    position: relative;
+    top:20px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 33px;
+    height: 32px;
+}
+
+.index-live-video-title{
+    position: relative;
+    top:32px;
+
+    color: white;
+    text-align: center;
+    font-size:15px;
+    font-family: "Microsoft YaHei UI" , monospace;
+}
+
+.index-live-video-fake {
+    border: lightgray 3px dashed;
+}
+
+
+
+/*  The history block  */
+
+.index-history-block{
+    /*top:354px;*/
+    margin-top: 50px;
+    height: 560px;
+}
+
+.index-history-title{
+    position: relative;
+    left: 55px;
+
+    font-size: 18px;
+    color: rgb(64,64,64);
+}
+
+.index-history-title:before{
+    position: relative;
+    top:35px;
+    left:-33px;
+
+    display: block;
+    width: 33px;
+    height: 32px;
+
+    content: url("../img/images/GHlive4_22.png");
+}
+
+.index-history-video-block{
+    position: relative;
+    left: 31px;
+
+    margin-top: 20px;
+}
+
+.index-history-video{
+    position: relative;
+    float: left;
+
+    margin-top: 5px;
+    width: 448px;
+    height: 194px;
+}
+
+.index-history-video-info{
+    float: left;
+    width: 224px;
+    height: 194px;
+
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+.index-history-video-img{
+    display: inline-block;
+    width: 224px;
+    height: 194px;
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+.index-history-img-mask {
+    position: absolute;
+    top:0;
+    z-index: 3;
+
+    display: inline-block;
+    width: 224px;
+    height: 194px;
+
+    background-color: black;
+    opacity: 0.4;
+}
+
+.index-history-img-mask:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.index-history-video-left > .index-history-video-info{
+    float: left;
+}
+
+.index-history-video-left > .index-history-img-mask{
+    left:224px;
+}
+
+.index-history-video-right > .index-history-img-mask{
+    left:0px;
+}
+
+.index-history-video-right > .index-history-video-info{
+    float: right;
+}
+
+.index-history-video-right .index-history-info-detail{
+    left: 251px;
+}
+
+.index-history-video-right .index-history-info-from{
+    left: 274px;
+}
+
+.index-history-video-right .index-history-info-department{
+    left: 311px;
+}
+
+
+.index-history-info-date {
+    position: relative;
+    top:20px;
+
+    font-size: 13px;
+    color: rgb(132,132,132);
+}
+
+.index-history-info-title {
+    position: relative;
+    top: 25px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 170px;
+
+    font-size: 20px;
+    color: rgb(86, 86, 86);
+}
+
+.index-history-info-detail {
+    position: absolute;
+    top:110px;
+    left:27px;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 170px;
+
+    font-size: 13px;
+    color: rgb(105, 105, 105);
+}
+
+.index-history-info-footer {
+    position: absolute;
+    top: 160px;
+
+    display: block;
+
+    font-size: 13px;
+    color: rgb(132, 132, 132);
+}
+
+.index-history-info-from{
+    left: 50px;
+}
+
+.index-history-info-department{
+    left: 87px;
+}
+
+.index-history-more {
+    position: relative;
+    clear: both;
+
+    display: block;
+    top:60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 140px;
+    height: 28px;
+
+    background-color: rgb(137,137,137);
+    line-height: 28px;
+    text-align: center;
+    font-size:14px;
+    color: white;
+}
+
+.index-history-more-link {
+    clear: both;
+
+    display: block;
+    width: 140px;
+    height: 28px;
+
+    color: white;
+    text-decoration: none;
+}
+
+.index-history-more-link:hover{
+    cursor:pointer;
+    background-color: #dc745b;
+    color:white;
+    text-decoration: none;
+}
+

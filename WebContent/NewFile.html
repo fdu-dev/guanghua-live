@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+id
+<input id = "id">
+title
+<input id = "title">
+img
+<input id = "img">
+author
+<input id = "author">
+module
+<input id = "module">
+source
+<input id = "source">
+text
+<textarea id = "text"></textarea>
+time
+<input id = "time">
+<button id = "submit"></button>
+	<script src="newFile.js" charset="UTF-8"></script>
+
+<form enctype="multipart/form-data" action="http://139.129.10.20:8080/GuangHuaLive/liveStart" method="post">
+    <table>
+        <tr>
+            <td><label for="txtname">账号：</label></td>
+            <td><input type="text" id="txtname" name="title" /></td>
+        </tr>
+        <tr>
+            <td><label for="txtpswd">密码：</label></td>
+            <td><input type="password" id="txtpswd" name="description" /></td>
+        </tr>
+        <tr>
+            <td colspan=2>
+                <input type="reset" />
+                <input type="submit" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

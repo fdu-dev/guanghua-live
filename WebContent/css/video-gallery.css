@@ -1,0 +1,168 @@
+/*history block*/
+
+.gallery-history-video-month{
+    float: left;
+
+    margin-top: 26px;
+}
+
+.gallery-history-video-month-title{
+    position: relative;
+    left:31px;
+
+    display: block;
+    width: 150px;
+    height: 40px;
+
+    font-size: 21px;
+    color: rgb(132, 132, 132);
+    text-align: center;
+}
+
+.gallery-history-video-month-title:before{
+    position: relative;
+    top:22px;
+
+    display: block;
+    width: 23px;
+    height: 20px;
+
+    content: url("../img/images/光华live4_22.png");
+}
+
+.gallery-history-video-wrapper{
+    margin-top: 35px;
+    margin-left: 31px;
+}
+
+.gallery-history-video{
+    position: relative;
+    float: left;
+
+    margin-top: 5px;
+    width: 448px;
+    height: 194px;
+}
+
+.gallery-history-video-info {
+    float: left;
+    width: 224px;
+    height: 194px;
+
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+.gallery-history-video-img {
+    display: inline-block;
+    width: 224px;
+    height: 194px;
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+.gallery-history-img-mask {
+    position: absolute;
+    top: 0;
+    z-index: 3;
+
+    display: inline-block;
+    width: 224px;
+    height: 194px;
+
+    background-color: black;
+    opacity: 0.4;
+}
+
+.gallery-history-img-mask:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.gallery-history-video-left > .gallery-history-video-info {
+    float: left;
+}
+
+.gallery-history-video-left > .gallery-history-img-mask {
+    left: 224px;
+}
+
+.gallery-history-video-right > .gallery-history-img-mask {
+    left: 0px;
+}
+
+.gallery-history-video-right > .gallery-history-video-info {
+    float: right;
+}
+
+.gallery-history-video-right .gallery-history-info-detail {
+    left: 251px;
+}
+
+.gallery-history-video-right .gallery-history-info-from {
+    left: 274px;
+}
+
+.gallery-history-video-right .gallery-history-info-department {
+    left: 311px;
+}
+
+.gallery-history-info-date {
+    position: relative;
+    top: 20px;
+
+    font-size: 13px;
+    color: rgb(132, 132, 132);
+}
+
+.gallery-history-info-title {
+    position: relative;
+    top: 25px;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 170px;
+
+    font-size: 20px;
+    color: rgb(86, 86, 86);
+}
+
+.gallery-history-info-detail {
+    position: absolute;
+    top: 110px;
+    left: 27px;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 170px;
+
+    font-size: 13px;
+    color: rgb(105, 105, 105);
+}
+
+.gallery-history-info-footer {
+    position: absolute;
+    top: 160px;
+
+    display: block;
+
+    font-size: 13px;
+    color: rgb(132, 132, 132);
+}
+
+.gallery-history-info-from {
+    left: 50px;
+}
+
+.gallery-history-info-department {
+    left: 87px;
+}
+
+.gallery-history-video-block + .container > .pagination{
+    position: relative;
+    top:40px;
+    left:-100px;
+}

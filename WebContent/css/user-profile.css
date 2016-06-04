@@ -1,0 +1,240 @@
+.user-profile-card{
+    margin-top: 49px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 490px;
+    height: 687px;
+
+    background-color: whitesmoke;
+}
+
+.user-profile-card-title{
+    position: relative;
+    top: -30px;
+    left: 44px;
+    height: 35px;
+
+    font-size: 24px;
+    color: rgb(90,90,90);
+}
+
+.user-profile-card-title:before{
+    position: relative;
+    top: 30px;
+    left: -15px;
+
+    display: block;
+    width: 12px;
+    height: 35px;
+
+    content: "";
+    background-color: #789ba1;
+}
+
+
+/* The avatar part */
+.user-profile-card-top {
+    margin-top: 55px;
+}
+
+.user-profile-title {
+    position: relative;
+    left: 45px;
+
+    height: 18px;
+
+    font-size: 18px;
+    color:rgb(90,90,90);
+}
+
+.user-profile-title:before {
+    position: relative;
+    top:15px;
+    left: -14px;
+
+    display: block;
+    width: 7px;
+    height: 7px;
+
+    content: "";
+    background-color: #789ba1;
+}
+
+.user-avatar-img {
+    margin-top: 30px;
+    margin-left: 45px;
+
+    display: block;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.user-upload-block {
+    position: relative;
+    top:-80px;
+    left: 180px;
+
+    width: 270px;
+    height: 80px;
+}
+
+.user-upload-filename {
+    display: block;
+
+    width: 260px;
+
+    color: rgb(123,123,123);
+    font-size: small;
+    text-align: center;
+}
+
+.user-upload-button {
+    margin-top: 15px;
+    margin-right: 25px;
+
+    width: 90px;
+    height: 25px;
+
+    background-color: #789BA1;
+    border:0;
+    color:white;
+    font-size: 13px;
+}
+
+#user-upload-file-hidden {
+    display: none;
+}
+
+
+/* The profile part */
+.user-profile-card-bottom {
+    position: relative;
+    top:-20px;
+}
+
+.user-profile-form {
+    margin-top: 20px;
+}
+
+.user-profile-table {
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 400px;
+    height: 180px;
+
+    color: rgb(73,73,73);
+    font-size: 16px;
+}
+
+.user-profile-table-title {
+    width: 100px;
+    text-align: right;
+}
+
+.user-profile-table-value {
+    padding-left: 42px;
+}
+
+.user-profile-table-value-text {
+    /*display: inline;*/
+    display: none;
+}
+
+.user-profile-item-edit-button {
+    display: none;
+    /*display: inline;*/
+    margin-left: 15px;
+
+    border: 0;
+
+    background-color: whitesmoke;
+    font-size: 15px;
+    color:rgb(120,155,161);
+}
+
+.user-profile-item-edit-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.user-profile-table-input {
+    /*display: none;*/
+    padding-left: 5px;
+    width: 183px;
+    height: 29px;
+
+    border: 1px solid lightgray;
+
+    font-size: 13px;
+}
+
+.user-error-mark {
+    position: absolute;
+    left: 380px;
+
+    font-size: small;
+    color: #dc745b;
+}
+
+.user-profile-cancel {
+    position: absolute;
+    left: 395px;
+
+    margin-top: 5px;
+
+    /*font-size: 13px;*/
+    color: #789ba1;
+    text-decoration: underline;
+}
+
+.user-profile-cancel:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.user-error-message {
+    position: absolute;
+    top:230px;
+    left:150px;
+
+    display: block;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    width: 200px;
+    height: 30px;
+
+    font-size: small;
+    color: #dc745b;
+    text-align: center;
+}
+
+
+.user-profile-submit-button {
+    margin-top: 79px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+    width: 140px;
+    height: 34px;
+
+    border: 0;
+
+    background-color: #789BA1;
+    color:white;
+    font-size: 16px;
+}
+
+div[upload-button]{
+	margin-top:10px;
+	background-color: #789BA1;
+    border:none;
+    border-radius:0;
+}
+
+div[upload-button]:hover{
+	background-color: #789BA1;
+}

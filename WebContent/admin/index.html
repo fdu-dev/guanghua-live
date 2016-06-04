@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>光华Live管理员系统</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="components/jquery-2.2.1.js"></script>
+    <script src="components/layer/layer.js"></script>
+    <script src="components/bootstrap/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" media="screen" href="components/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="components/bootstrap/bootstrap-theme.min.css">
+
+    <!-- Bootstrap Admin Theme -->
+    <link rel="stylesheet" media="screen" href="components/bootstrap/bootstrap-admin-theme.css">
+    <link rel="stylesheet" media="screen" href="components/bootstrap/bootstrap-admin-theme-change-size.css">
+
+    <link rel="stylesheet"
+          href="components/angular-fileupload/btnUpload.min.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="components/bootstrap/DT_bootstrap.css">
+    <link rel="stylesheet" media="screen" href="components/angular-fileupload/btnUpload.min.css">
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+
+
+
+    <!-- Vendors -->
+    <!-- (...) -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="components/bootstrap/html5shiv.js"></script>
+    <script type="text/javascript" src="components/bootstrap/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="bootstrap-admin-with-small-navbar">
+<div class="main-wrapper" ng-app="admin-app">
+
+    <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar-sm" role="navigation">
+        <div class="container" ng-controller="LogoutCtrl">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#/liveAdmin"><i class="glyphicon glyphicon-share-alt"></i>回到主站</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" role="button" class="dropdown-toggle" data-hover="dropdown" > <i
+                                        class="glyphicon glyphicon-user"></i><span id="upName">未登录</span><i class="caret"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a ng-click="logout()"><i class="glyphicon glyphicon-log-out"></i>&nbsp;注销</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-default navbar-fixed-top bootstrap-admin-navbar bootstrap-admin-navbar-under-small"
+         role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".main-navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" ng-href="#/liveAdmin">光华Live · 管理员</a>
+                    </div>
+                    <div class="collapse navbar-collapse main-navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a ui-sref="liveAdmin">我的直播</a></li>
+                            <li><a ui-sref="management">我的点播</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </div>
+        </div><!-- /.container -->
+    </nav>
+
+    <div ui-view="login"></div>
+    <div ui-view="liveAdmin"></div>
+    <div ui-view="management"></div>
+
+    <!-- footer -->
+    <div class="navbar navbar-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <footer role="contentinfo">
+                        <p class="left">光华LIVE</p>
+                        <p class="right">&copy; 2016 <a href="http://www.meritoo.pl" target="_blank">晨曦工作室</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="components/angular/angular.min.js"></script>
+
+<script src="components/angular-cookies/angular-cookies.min.js"></script>
+<script src="components/angular-route/angular-route.min.js"></script>
+<script src="components/angular-route/angular-ui-router.js"></script>
+<script src="components/angular-fileupload/angular-upload.min.js"></script>
+<script type="text/javascript" src="vendors/uniform/jquery.uniform.min.js"></script>
+<script src="http://cdn.bootcss.com/angular-datatables/0.5.4/angular-datatables.js"></script>
+
+<script src="js/controller/loginCtrl.js"></script>
+<script src="js/controller/logoutCtrl.js"></script>
+<script src="js/controller/liveAdminCtrl.js"></script>
+<script src="js/controller/managementCtrl.js"></script>
+<script src="js/controller/managementVideoCtrl.js"></script>
+<script src="js/controller/managementDanmuCtrl.js"></script>
+<script src="js/controller/managementCommentCtrl.js"></script>
+
+
+<script type="text/javascript" src="components/bootstrap/twitter-bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="components/bootstrap/bootstrap-admin-theme-change-size.js"></script>
+
+
+<script type="text/javascript" src="components/bootstrap/DT_bootstrap.js"></script>
+<script type="text/javascript" src="components/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="components/bootstrap/twitter-bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="components/bootstrap/bootstrap-admin-theme-change-size.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>光华Live</title>
+    <script src="components/jquery-2.2.1.js"></script>
+    
+    <link href="components/danmuPlayer/dist/css/danmuplayer.css" rel="stylesheet">
+    <script src="components/layer/layer.js"></script>
+    <!--<link href="components/video-js-5.8.5/video-js.min.css" rel="stylesheet">-->
+    <!--<script src="components/video-js-5.8.5/video.min.js"></script>-->
+
+    <script src="components/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="components/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="components/angular-fileupload/btnUpload.min.css">
+    <script src="components/angular/angular.min.js"></script>
+    <script src="components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="components/angular-route/angular-route.min.js"></script>
+    <script src="components/angular-fileupload/angular-upload.min.js"></script>
+    <link href="css/video-player.css" rel="stylesheet">
+    <link href="css/my-header.css" rel="stylesheet">
+    <link href="css/my-footer.css" rel="stylesheet">
+    <script src="js/directives/headerDirective.js"></script>
+    <script src="js/directives/commentDirective.js"></script>
+    <script src="js/controller/loginCtrl.js"></script>
+    <script src="js/controller/pageSwitchCtrl.js"></script>
+    <script src="js/controller/videoPlayerCtrl.js"></script>
+
+    <link href="css/live-index.css" rel="stylesheet">
+    <script src="js/controller/liveIndexCtrl.js"></script>
+
+    <link href="css/video-gallery.css" rel="stylesheet">
+    <script src="js/controller/videoGalleryCtrl.js"></script>
+
+    <link href="css/register.css" rel="stylesheet">
+    <link href="css/login-panel.css" rel="stylesheet">
+    <script src="js/controller/registerCtrl.js"></script>
+
+    <link href="css/user-profile.css" rel="stylesheet">
+    <script src="js/controller/profileCtrl.js"></script>
+
+    <link href="css/modify-password.css" rel="stylesheet">
+    <script src="js/controller/modifyPasswordCtrl.js"></script>
+    <script src="js/controller/forgetPasswordCtrl.js"></script>
+    <script src="js/controller/resetPasswordCtrl.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="js/controller/liveCtrl.js"></script>
+    <script src="components/ckplayer6.7/ckplayer/ckplayer.js"></script>
+    <script src="components/ckplayer6.7/js/offlights.js"></script>
+
+</head>
+<body ng-app="myApp" >
+<div class="wrapper">
+
+    <!-- header part start here -->
+    <!--<div class="header" ng-controller="LoginCtrl">-->
+    <!--<div class="header-img1"></div>-->
+    <!--<div class="header-img2"></div>-->
+    <!--<div class="sign-up-btn" ng-click="signUp()">注册</div>-->
+    <!--<div class="sign-separator"></div>-->
+    <!--<div class="sign-in-btn" ng-click="signIn()">登录</div>-->
+    <!--</div>-->
+    <!--<div class="page-switch-bar">-->
+    <!--<div class="switch-item{{page.index}}" ng-repeat="page in pages">{{page.name}}</div>-->
+    <!--</div>-->
+
+    <app-header></app-header>
+
+    <!-- player part start here -->
+    <ng-view></ng-view>
+
+
+
+
+    <!-- footer -->
+
+    <div class="footer">
+        <span class="footer-title">@2016晨曦工作室&nbsp;&nbsp;</span>
+        <a class="footer-link">关于我们</a>|
+        <a class="footer-link">联系我们</a>
+    </div>
+
+</div>
+
+</body>
+</html>

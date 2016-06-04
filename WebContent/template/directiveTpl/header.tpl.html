@@ -1,0 +1,24 @@
+<div class="header" ng-controller="HeaderCtrl">
+	<div class="header-img1"></div>
+	<div class="header-img2"></div>
+	<div id="topBtn1" class="sign-up-btn" ng-click="signUp()">注册</div>
+	<div class="sign-separator"></div>
+	<div id="topBtn2" class="sign-in-btn" ng-click="signIn()">登录</div>
+
+	<div id="centerBtn" class="btn-group private-center">
+		<button type="button" class="btn btn-success dropdown-toggle btn-sm"
+			data-toggle="dropdown">
+			个人中心&nbsp<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="#/app/profile">个人信息</a></li>
+			<li><a href="#/app/modifyPassword">修改密码</a></li>
+			<li class="divider"></li>
+			<li><a ng-click="signOut()">注销</a></li>
+		</ul>
+	</div>
+</div>
+<div class="page-switch-bar" ng-controller="PageSwitchCtrl">
+	<div class="switch-item{{page.index}}" ng-repeat="page in pages"
+		ng-click="switch(page)">{{page.name}}</div>
+</div>

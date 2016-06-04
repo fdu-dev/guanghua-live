@@ -1,0 +1,57 @@
+*target*
+*.jar
+*.war
+*.ear
+*.class
+
+# eclipse specific git ignore
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       debug.log
+#       nbproject/
+#
+
+
+#git rm -r --cached .
+#git add .
+#git commit -m "fixed untracked files"
+#Fixed. Ok, I created the .gitignore file in notepad
+#on windows and it wasn't working. When I viewed the
+*/applicationContext.xml
+#.gitignore file in linux it looked like organised
+#gibberish - perhaps notepad had written out unicode
+#rather than ascii or whatever 8-bit is.
+
+*/hibernate.cfg.xml
+*/log4j.properties
+*/config.properties
+*live/util*
+*config*
+*exception*
+*ConfirmRetrivePassword.java
+build/*

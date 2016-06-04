@@ -1,0 +1,113 @@
+<!-- recommend block -->
+<div class="index-recommend-block">
+    <a href="javascript:void(0);" ng-click="goLive(liveList[0].vid)">
+        <img class="index-recommend-img" src="{{liveList[0].coverImg}}">
+    </a>
+    <div class="index-recommend-text-block">
+        <span name="index-recommend-link"><img class="index-recommend-text-img"
+                                                     src="img/images/GHlive4_07.png"></span>
+        <div class="index-recommend-text-title">
+            <a href="javascript:void(0);" ng-click="goLive(liveList[0].vid)">
+                {{liveList[0].title||'2016年十大歌手直播现场'}}
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- live block -->
+<div class="index-live-block">
+    <div class="index-live-title">正在直播</div>
+    <div class="index-live-video-block">
+        <div ng-repeat="video in liveList">
+        	<div class="index-live-video live-video-real" style="position:relative;">
+                <img class="index-live-video-real-img" ng-src="{{video.coverImg}}">
+                <div class="index-live-video-mask" ng-click="goLive(video.vid)">
+	                <img class="index-live-video-icon" src="img/images/GHlive4_19.png">
+	                <div class="index-live-video-title">{{video.title}}</div>
+	            </div>
+            </div>
+        </div>
+        <div class="index-live-video index-live-video-fake"></div>
+        <div class="index-live-video index-live-video-fake"></div>
+    </div>
+</div>
+
+
+<!-- history block -->
+<div class="index-history-block">
+    <div class="index-history-title">往期节目</div>
+
+
+    <div class="index-history-video-block">
+
+
+        <div ng-repeat="slide in videos">
+            <div ng-repeat="video in slide.slide"
+                 ng-class="{'index-history-video-left':slide.line%2==0,'index-history-video-right':slide.line%2==1}"
+                 class="index-history-video">
+                <div class="index-history-video-info">
+                    <span class="index-history-info-date">{{video.formatTime}}</span>
+                    <p class="index-history-info-title">{{video.title}}</p>
+                    <p class="index-history-info-detail">{{video.description}}</p>
+                    <span class="index-history-info-footer index-history-info-from">from</span>
+                    <span class="index-history-info-footer index-history-info-department">{{video.department}}</span>
+                </div>
+                <img class="index-history-video-img" ng-src="{{video.coverImg}}">
+                <div class="index-history-img-mask" ng-click="toVideoPage(video.vid)"></div>
+            </div>
+        </div>
+
+
+
+
+
+        <!--<div class="index-history-video index-history-video-left">-->
+            <!--<div class="index-history-video-info">-->
+                <!--<span class="index-history-info-date">2016年3月21日</span>-->
+                <!--<p class="index-history-info-title">程序猿的故事</p>-->
+                <!--<p class="index-history-info-detail">讲述了一群程序猿赶deadline的故事</p>-->
+                <!--<span class="index-history-info-footer index-history-info-from">from</span>-->
+                <!--<span class="index-history-info-footer index-history-info-department">复旦大学学生会</span>-->
+            <!--</div>-->
+            <!--<img class="index-history-video-img" src="img/video.jpeg">-->
+            <!--<div class="index-history-img-mask"></div>-->
+        <!--</div>-->
+
+        <!--<div class="index-history-video index-history-video-right">-->
+            <!--<div class="index-history-video-info">-->
+                <!--<span class="index-history-info-date">2016年3月21日</span>-->
+                <!--<p class="index-history-info-title">程序猿的故事</p>-->
+                <!--<p class="index-history-info-detail">讲述了一群程序猿赶deadline的故事</p>-->
+                <!--<span class="index-history-info-footer index-history-info-from">from</span>-->
+                <!--<span class="index-history-info-footer index-history-info-department">复旦大学学生会</span>-->
+            <!--</div>-->
+            <!--<img class="index-history-video-img" src="img/video.jpeg">-->
+            <!--<div class="index-history-img-mask"></div>-->
+        <!--</div>-->
+
+        <!--<div class="index-history-video index-history-video-right">-->
+            <!--<div class="index-history-video-info">-->
+                <!--<span class="index-history-info-date">2016年3月21日</span>-->
+                <!--<p class="index-history-info-title">程序猿的故事</p>-->
+                <!--<p class="index-history-info-detail">讲述了一群程序猿赶deadline的故事</p>-->
+                <!--<span class="index-history-info-footer index-history-info-from">from</span>-->
+                <!--<span class="index-history-info-footer index-history-info-department">复旦大学学生会</span>-->
+            <!--</div>-->
+            <!--<img class="index-history-video-img" src="img/video.jpeg">-->
+            <!--<div class="index-history-img-mask"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="index-history-video-block" ng-repeat="slides in date.scripts">-->
+    <!--<div class="index-history-video" ng-class="{'history-video-left':slides.line%2==0,'history-video-right':slides.line%2==1}" ng-repeat="slide in slides.slide"></div>-->
+    <!--<div class="index-history-video-info">-->
+    <!--<span class="index-history-info-date">{{slide.formatTime+" "+$index}}</span>-->
+    <!--<p class="index-history-info-title">{{slide.title}}</p>-->
+    <!--<p class="index-history-info-detail">{{slide.description}}</p>-->
+    <!--<span class="index-history-info-footer index0history-info-from">from</span>-->
+    <!--<span class="index-history-info-footer index-history-info-department">{{slide.department}}</span>-->
+    <!--</div>-->
+    <!--<img class="index-history-video-img" src="{{slide.coverImg}}">-->
+    <!--<div class="index-history-img-mask"></div>-->
+    <div class="index-history-more"><a class="index-history-more-link" href="#/app/gallery">更多往期内容</a></div>
+
+</div>

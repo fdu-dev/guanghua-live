@@ -1,0 +1,80 @@
+<div class="user-profile-card">
+    <div class="user-profile-card-title">个人信息修改</div>
+    <div class="user-profile-card-top">
+        <div class="user-profile-title">头像</div>
+        <form name="userAvatarForm" id="userAvatarForm" enctype="multipart/form-data" method="post" action="">
+            <img class="user-avatar-img" id="user-avatar-img" src="{{userProfileHeadImg}}">
+            <div class="user-upload-block">
+                <span class="user-upload-filename">支持.jpg/.png格式图片，文件大小不超过2M</span>
+                <div
+				  class="btn btn-primary btn-upload"
+				  upload-button
+				  url="userUploadHeadImg"
+				  param="image"
+				  on-success="onFileUploadSuccess(response)"
+				>上传图片</div>
+                <!-- 
+                <input class="user-upload-button" name="userAvatarUpload" type="button" ng-click="submit()" value="提交">
+                <input class="user-upload-button user-avatar-confirm" ng-click="chooseImg()" value="选择图片" type="button">
+                <input class="hidden" name="rurl" value="index.html#app/profile">
+                <input id="user-upload-file-hidden" name="image" ng-model="userUploadFile" onchange="angular.element(this).scope().user_preview_head()" type="file" accept="image/*" required>
+                 -->
+            </div>
+        </form>
+    </div>
+
+    <div class="user-profile-card-bottom">
+        <div class="user-profile-title">基本信息</div>
+        <form class="user-profile-form" name="userProfileForm">
+            <table class="user-profile-table">
+                <tr>
+                    <td class="user-profile-table-title">用户名:</td>
+                    <td class="user-profile-table-value">
+                        <input class="user-profile-table-input" name="userProfileUsername"
+                               ng-model="userProfileUsername" ng-minlength="1" ng-maxlength="10" type="text"
+                               placeholder="请输入1-10位字符" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user-profile-table-title">学号邮箱:</td>
+                    <td class="user-profile-table-value">
+                        <span class="user-profile-table-value-text">test@fudan.edu.cn</span>
+                        <input class="user-profile-table-input" name="userProfileEmail"
+                               ng-model="userProfileEmail" ng-pattern="/\w+([-+.]\w+)*@fudan.edu.cn/"
+                               type="email" placeholder="仅支持fudan.edu.cn" required disabled>
+                        <span class="user-error-mark" ng-show="userProfileForm.userProfileEmail.$dirty && userProfileForm.userProfileEmail.$invalid">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user-profile-table-title">所属部门:</td>
+                    <td class="user-profile-table-value">
+                        <span class="user-profile-table-value-text">复旦大学学生会</span>
+                        <input class="user-profile-table-input" name="userProfileDepartment"
+                               ng-model="userProfileDepartment" ng-minlength="1" ng-maxlength="20" type="text"
+                               placeholder="请输入1-20位字符" required>
+                        <span class="user-error-mark" ng-show="userProfileForm.userProfileDepartment.$dirty && userProfileForm.userProfileDepartment.$invalid">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user-profile-table-title">手 机:</td>
+                    <td class="user-profile-table-value">
+                        <span class="user-profile-table-value-text">123456789101</span>
+                        <input class="user-profile-table-input" name="userProfilePhone"
+                               ng-model="userProfilePhone" ng-pattern="/^[0-9]{11}$/" type="text"
+                               placeholder="仅支持中国大陆手机号" required>
+                        <span class="user-error-mark" ng-show="userProfileForm.userProfilePhone.$dirty && userProfileForm.userProfilePhone.$invalid">*</span>
+                    </td>
+                </tr>
+            </table>
+            <span class="user-error-message" ng-show="userProfileForm.userProfileUsername.$dirty && userProfileForm.userProfileUsername.$invalid">用户名不合法！</span>
+                <span class="user-error-message"
+                      ng-show="userProfileForm.userProfileUsername.$valid && userProfileForm.userProfileEmail.$dirty && userProfileForm.userProfileEmail.$invalid">邮箱不合法！</span>
+                <span class="user-error-message"
+                      ng-show="userProfileForm.userProfileUsername.$valid && userProfileForm.userProfileEmail.$valid && userProfileForm.userProfileDepartment.$dirty && userProfileForm.userProfileDepartment.$invalid">请使用合法的部门名！</span>
+                <span class="user-error-message"
+                      ng-show="userProfileForm.userProfileUsername.$valid && userProfileForm.userProfileEmail.$valid && userProfileForm.userProfileDepartment.$valid && userProfileForm.userProfilePhone.$dirty && userProfileForm.userProfilePhone.$invalid">请输入正确的手机号！</span>
+            <input class="user-profile-submit-button"  type="button" value="保存修改"
+                   ng-click="modifyUser(userProfileForm.userProfileUsername.$valid && userProfileForm.userProfileEmail.$valid && userProfileForm.userProfileDepartment.$valid && userProfileForm.userProfilePhone.$valid)">
+        </form>
+    </div>
+</div>

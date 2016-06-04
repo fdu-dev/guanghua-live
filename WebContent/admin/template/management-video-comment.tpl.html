@@ -1,0 +1,29 @@
+<button type="button" class="btn btn-link video-batch-delete" ng-click="batchDeleteComments()"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;批量删除</button>
+<br>
+<table datatable="ng" class="table table-hover" id="example">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>评论内容</th>
+        <th>评论用户</th>
+        <th>评论时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="comment in comments">
+        <th scope="row">
+            <label><input type="checkbox" ng-value="comment.cid" ng-model="comment.selected"></label>
+            {{$index+1}}
+        </th>
+        <td>{{comment.message}}</td>
+        <td>{{comment.username}}</td>
+        <td>{{comment.time}}</td>
+        <td><a class="management-operation-button"><i class="glyphicon glyphicon-remove"
+                                                      title="删除评论" ng-click="deleteComment(comment.cid)"></i></a></td>
+    </tr>
+    <tbody>
+
+    </tbody>
+</table>
+
+

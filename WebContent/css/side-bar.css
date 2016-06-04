@@ -1,0 +1,11 @@
+.side-bar{
+    margin-left: 20px;
+    width: 292px;
+    height: 400px;
+    background: #d3e2e5;
+    margin-bottom: 100px;
+
+    -webkit-box-shadow:10px 10px 20px 2px #888;
+    -moz-box-shadow:10px 10px 20px 2px #888;
+    box-shadow:10px 10px 20px 2px #888;
+}

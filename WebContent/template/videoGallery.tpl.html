@@ -1,0 +1,33 @@
+<div class="gallery-history-video-block container">
+    <div ng-repeat="date in videos">
+        <div class="gallery-history-video-month">
+            <div class="index-history-title">{{date.date}}</div>
+            <!--<div class="gallery-history-video-month-title">{{date.date}}</div>-->
+            <div class="gallery-history-video-wrapper" ng-repeat="slides in date.scripts">
+                <div class="gallery-history-video" ng-class="{'gallery-history-video-left':slides.line%2==0,'gallery-history-video-right':slides.line%2==1}" ng-repeat="slide in slides.slide">
+                    <div class="gallery-history-video-info">
+                        <span class="gallery-history-info-date">{{slide.formatTime+""+$index}}</span>
+                        <p class="gallery-history-info-title">{{slide.title}}</p>
+                        <p class="gallery-history-info-detail">{{slide.description}}</p>
+                        <span class="gallery-history-info-footer gallery-history-info-from">from</span>
+                        <span class="gallery-history-info-footer gallery-history-info-department">{{slide.department}}</span>
+                    </div>
+                    <img class="gallery-history-video-img" ng-src="{{slide.coverImg}}">
+                    <div class="gallery-history-img-mask" ng-click="toVideoPage(slide.vid)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center">
+    <ul class="pagination">
+        <li ng-class="{disabled:curPage==0}"><a href='javascript:void(0);' ng-click="gotoPage(0);">&lt;&lt;</a></li>
+        <li ng-class="{disabled:curPage==0}"><a href='javascript:void(0);' ng-click="gotoPage(curPage-1);">&lt;</a></li>
+        <li ng-class='{disabled:true}' ng-if='curPage-4>0'><a href='javascript:void(0);'>...</a></li>
+        <li ng-repeat="page in pageRange" ng-class="{disabled:page==curPage}"><a href='javascript:void(0);' ng-click="gotoPage(page);">{{page + 1}}</a></li>
+        <li ng-class='{disabled:true}' ng-if='curPage+4<totalPage-1'><a href='javascript:void(0);'>...</a></li>
+        <li ng-class="{disabled:curPage==totalPage-1}"><a href='javascript:void(0);' ng-click="gotoPage(curPage+1);">&gt;</a></li>
+        <li ng-class="{disabled:curPage==totalPage-1}"><a href='javascript:void(0);' ng-click="gotoPage(totalPage-1);">&gt;&gt;</a></li>
+    </ul>
+</div>

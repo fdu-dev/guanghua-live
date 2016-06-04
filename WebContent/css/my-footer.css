@@ -1,0 +1,25 @@
+/* The footer */
+
+
+.footer {
+    position: relative;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:25px;
+    width:350px;
+    text-align: center;
+    font-size: 14px;
+    color:rgb(132,132,132);
+}
+
+.footer-link {
+    text-decoration: none;
+    color:rgb(132,132,132);
+}
+
+.footer-link:hover {
+    cursor: pointer;
+    color: #dc745b;
+    text-decoration: underline;
+}

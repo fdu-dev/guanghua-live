@@ -1,0 +1,27 @@
+<button type="button" class="btn btn-link video-batch-delete" ng-click="batchDeleteDanmus()"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;批量删除</button>
+<br>
+<table datatable="ng" class="table table-hover" id="example">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>弹幕内容</th>
+        <th>发送用户</th>
+        <th>发送时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="danmu in danmus">
+        <th scope="row">
+            <label><input type="checkbox" ng-value="danmu.cid" ng-model="danmu.selected"></label>
+            {{$index+1}}
+        </th>
+        <td>{{danmu.message}}</td>
+        <td>{{danmu.username}}</td>
+        <td>{{danmu.time}}</td>
+        <td><a class="management-operation-button"><i class="glyphicon glyphicon-remove"
+                                                      title="删除弹幕" ng-click="deleteDanmu(danmu.did)"></i></a></td>
+    </tr>
+    <tbody>
+
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+.live-banner{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 307px;
+    width: 900px;
+    background: #dc745b;
+}
+.live-banner-switcher{
+    float: left;
+    width: 220px;
+    height: 100%;
+}
+.live-banner-img{
+    float: left;
+    width: 680px;
+    height: 100%;
+}
+.live-banner-img > img {
+    margin: auto;
+    height: 307px;
+}

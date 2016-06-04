@@ -1,0 +1,32 @@
+
+<div class="video-title">{{video.title}}</div>
+<div class="video-banner">
+    <div id="a1"></div>
+    <div class="video-info-wrapper">
+        <div class="video-info-title">{{video.title}}</div>
+        <div class="video-info-content">{{video.description}}</div>
+        <div class="video-info-from">from {{video.department}}</div>
+    </div>
+</div>
+
+
+
+<div class="live-ad"></div>
+
+<script type="text/javascript">
+
+
+    function ckadjump(){
+        CKobject.getObjectById('ckplayer_a1').frontAdUnload();
+    }
+
+    //开关灯
+    function closelights(){//关灯
+        layer.msg("暂不支持");
+    }
+    function openlights(){//开灯
+        layer.msg("暂不支持");
+    }
+</script>
+
+

@@ -1,0 +1,99 @@
+<div class="register-profile-card">
+    <div class="register-profile-card-title">注册</div>
+
+    <form class="register-profile-form" name="registerProfileForm" novalidate>
+        <div class="register-profile-card-top">
+            <div class="register-profile-title">基本信息</div>
+
+            <table class="register-profile-table">
+                <tr>
+                    <td class="register-profile-table-title">用户名:</td>
+                    <td class="register-profile-table-value">
+                        <input class="register-profile-table-input" name="registerProfileUsername"
+                               ng-model="registerProfileUsername" ng-minlength="1" ng-maxlength="10" type="text"
+                               placeholder="请输入1-10位字符" required>
+                            <span class="register-error-mark"
+                                  ng-show="registerProfileForm.registerProfileUsername.$dirty && registerProfileForm.registerProfileUsername.$invalid">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="register-profile-table-title">学号邮箱:</td>
+                    <td class="register-profile-table-value">
+                        <input class="register-profile-table-input" name="registerProfileEmail"
+                               ng-model="registerProfileEmail" ng-pattern="/\w+([-+.]\w+)*@fudan.edu.cn/"
+                               type="email" placeholder="仅支持fudan.edu.cn" required>
+                            <span class="register-error-mark"
+                                  ng-show="registerProfileForm.registerProfileEmail.$dirty && registerProfileForm.registerProfileEmail.$invalid">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="register-profile-table-title">密码:</td>
+                    <td class="register-profile-table-value">
+                        <input class="register-profile-table-input" name="registerProfilePassword"
+                               ng-model="registerProfilePassword" ng-pattern="/^[0-9_a-zA-Z]{6,16}$/"
+                               type="password" placeholder="6-16位英文字母或数字" required>
+                            <span class="register-error-mark"
+                                  ng-show="registerProfileForm.registerProfilePassword.$dirty && registerProfileForm.registerProfilePassword.$invalid">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="register-profile-table-title">确认密码:</td>
+                    <td class="register-profile-table-value">
+                        <input class="register-profile-table-input" name="registerProfileConfirmPassword"
+                               ng-model="registerProfileConfirmPassword" ng-pattern="/^[0-9_a-zA-Z]{6,16}$/"
+                               type="password" placeholder="6-16位英文字母或数字" required>
+                            <span class="register-error-mark"
+                                  ng-show="registerProfileForm.registerProfileConfirmPassword.$dirty && (registerProfilePassword != registerProfileConfirmPassword)">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="register-profile-table-title">所属部门:</td>
+                    <td class="register-profile-table-value">
+                        <input class="register-profile-table-input" name="registerProfileDepartment"
+                               ng-model="registerProfileDepartment" ng-minlength="1" ng-maxlength="20" type="text"
+                               placeholder="请输入1-20位字符" required>
+                            <span class="register-error-mark"
+                                  ng-show="registerProfileForm.registerProfileDepartment.$dirty && registerProfileForm.registerProfileDepartment.$invalid">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="register-profile-table-title">手 机:</td>
+                    <td class="register-profile-table-value">
+                        <input class="register-profile-table-input" name="registerProfilePhone"
+                               ng-model="registerProfilePhone" ng-pattern="/^[0-9]{11}$/" type="text"
+                               placeholder="仅支持中国大陆手机号" required>
+                             <span class="register-error-mark"
+                                   ng-show="registerProfileForm.registerProfilePhone.$dirty && registerProfileForm.registerProfilePhone.$invalid">*</span>
+                    </td>
+                </tr>
+            </table>
+                <span class="register-error-message"
+                      ng-show="registerProfileForm.registerProfileUsername.$dirty && registerProfileForm.registerProfileUsername.$invalid">用户名不合法！</span>
+                <span class="register-error-message"
+                      ng-show="registerProfileForm.registerProfileUsername.$valid && registerProfileForm.registerProfileEmail.$dirty && registerProfileForm.registerProfileEmail.$invalid">邮箱不合法！</span>
+                <span class="register-error-message"
+                      ng-show="registerProfileForm.registerProfileUsername.$valid && registerProfileForm.registerProfileEmail.$valid && ((registerProfileForm.registerProfilePassword.$dirty && registerProfileForm.registerProfilePassword.$invalid) || (registerProfileForm.registerProfileConfirmPassword.$dirty && registerProfileForm.registerProfileConfirmPassword.$invalid))">密码格式错误！</span>
+                <span class="register-error-message"
+                      ng-show="registerProfileForm.registerProfileUsername.$valid && registerProfileForm.registerProfileEmail.$valid && registerProfileForm.registerProfilePassword.$dirty && registerProfileForm.registerProfilePassword.$valid && registerProfileForm.registerProfileConfirmPassword.$dirty && registerProfileForm.registerProfileConfirmPassword.$valid && (registerProfilePassword !=  registerProfileConfirmPassword)">两次密码输入不一致！</span>
+                <span class="register-error-message"
+                      ng-show="registerProfileForm.registerProfileUsername.$valid && registerProfileForm.registerProfileEmail.$valid && registerProfileForm.registerProfilePassword.$valid && registerProfileForm.registerProfileConfirmPassword.$valid && (registerProfilePassword ==  registerProfileConfirmPassword) && registerProfileForm.registerProfileDepartment.$dirty && registerProfileForm.registerProfileDepartment.$invalid">请使用合法的部门名！</span>
+                <span class="register-error-message"
+                      ng-show="registerProfileForm.registerProfileUsername.$valid && registerProfileForm.registerProfileEmail.$valid && registerProfileForm.registerProfilePassword.$valid && registerProfileForm.registerProfileConfirmPassword.$valid && (registerProfilePassword ==  registerProfileConfirmPassword) && registerProfileForm.registerProfileDepartment.$valid && registerProfileForm.registerProfilePhone.$dirty && registerProfileForm.registerProfilePhone.$invalid">请输入正确的手机号！</span>
+        </div>
+
+        <div class="register-profile-card-bottom">
+            <div class="register-profile-title">头像</div>
+            <img class="register-avatar-img" id="register-avatar-img" src="img/head.png">
+            <div class="register-upload-block">
+                    <span class="register-upload-filename"
+                          id="register-upload-filename">支持.jpg/.png格式图片，文件大小不超过2M</span>
+                <!-- <button class="register-upload-button" id="register-upload-button" onclick="register_uploadImg()">上传</button> -->
+                <input id="register-upload-file-hidden" name="registerUploadFile" onchange="angular.element(this).scope().register_preview_head()" type="file">
+
+            </div>
+        </div>
+        <input class="register-profile-submit-button"
+               ng-disabled="registerProfileForm.$invalid || (registerProfilePassword != registerProfileConfirmPassword)"
+               type="button" value="注册" ng-click="signUp()">
+    </form>
+</div>
