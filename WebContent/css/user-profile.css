@@ -9,6 +9,7 @@
 }
 
 .user-profile-card-title{
+	font-family: "Microsoft YaHei UI";
     position: relative;
     top: -30px;
     left: 44px;
@@ -38,6 +39,7 @@
 }
 
 .user-profile-title {
+	font-family: "Microsoft YaHei UI";
     position: relative;
     left: 45px;
 
@@ -80,6 +82,7 @@
 }
 
 .user-upload-filename {
+	font-family: "Microsoft YaHei UI";
     display: block;
 
     width: 260px;
@@ -88,8 +91,8 @@
     font-size: small;
     text-align: center;
 }
-
 .user-upload-button {
+	font-family: "Microsoft YaHei UI";
     margin-top: 15px;
     margin-right: 25px;
 
@@ -129,11 +132,13 @@
 }
 
 .user-profile-table-title {
+	font-family: "Microsoft YaHei UI";
     width: 100px;
     text-align: right;
 }
 
 .user-profile-table-value {
+	font-family: "Microsoft YaHei UI";
     padding-left: 42px;
 }
 
@@ -213,6 +218,7 @@
 
 
 .user-profile-submit-button {
+	font-family: "Microsoft YaHei UI";
     margin-top: 79px;
     margin-left: auto;
     margin-right: auto;
@@ -233,6 +239,7 @@ div[upload-button]{
 	background-color: #789BA1;
     border:none;
     border-radius:0;
+    font-family: "Microsoft YaHei UI";
 }
 
 div[upload-button]:hover{

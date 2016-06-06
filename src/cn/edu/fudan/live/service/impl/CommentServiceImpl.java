@@ -51,11 +51,21 @@ public class CommentServiceImpl implements ICommentService {
 	
 	@Override
 	public List<Comment> getReadyCommentListByStartLimit(int vid, int commentedId, int start, int limit){
+		String limitStr = "limit "+start+","+limit;
+		if(limit==0){
+			limitStr = "";
+		}
+		String order = " desc ";
+		if(commentedId>0){
+			order = " asc ";
+		}
 		String sql = "select c.cid,c.vid,c.uid,c.time,c.commented_id,c.message,u.username,u.headImg "
 				+"from comment c join user u on c.uid=u.uid "
 				+"where c.vid="+vid+" AND c.commented_id="+commentedId+" "
-				+"order by c.time desc "
-				+"limit "+start+","+limit+";";
+				+"order by c.time"+order
+				+limitStr
+				+";";
+//		System.out.println("[CommentService] hql: "+sql);
 		List<Map> list = entityDAO.findBySql(sql);
 		List<Comment> comments = new ArrayList<Comment>();
 		for(Map map:list){

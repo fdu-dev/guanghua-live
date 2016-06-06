@@ -698,14 +698,14 @@
 .danmu-player .play-btn {
     width: 50px;
     height: 100%;
-    background-color: #dc745b;
-    color: #fff;
+    background-color: #ffffff;
+    color: #7e7e7e;
     text-align: center;
-    cursor: pointer
+    cursor: pointer;
+    font-size:20px;
 }
-
 .danmu-player .play-btn:hover {
-    background-color: #00bb00;
+    background-color: rgba(200,200,200,0.5);
 }
 
 .danmu-player .time-text {
@@ -747,17 +747,23 @@
 .danmu-player .danmu-input {
     line-height: 25px;
     width: 40%;
-    border-right: none;
-
+    border:none;
     font-family: "Microsoft YaHei UI";
-    font-size: 16px;
-    padding-left: 10px;
+    font-size: 15px;
+    text-align:left !important;
+    padding-left: 15px;
+    background: #ececec;
     height: 46px;
     cursor: text !important;
 }
 
+.danmu-player .danmu-input:hover {
+	background: #e0e0e0;
+    border-right: none
+}
 .danmu-player .danmu-input:focus {
-
+	background: #e0e0e0;
+	text-align:left;
     border-right: none
 }
 
@@ -777,7 +783,7 @@
 }
 
 .danmu-player .send-btn:hover {
-    background-color: #222
+    background-color: rgba(220,116,91,0.85);
 }
 
 .danmu-player .ctrl-btn-right {
@@ -832,8 +838,8 @@
     display: none;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    border-radius: 3px;
-    border: 2px solid #1e90ff
+  
+    border: none;
 }
 
 .tooltip714 .pointer714 {
@@ -868,7 +874,7 @@
 }
 
 .tooltip714.pos_n .pointer714 {
-    border-top: 8px solid #1e90ff;
+    border-top: 8px solid rgba(255, 255, 255, .9);
     bottom: -8px
 }
 

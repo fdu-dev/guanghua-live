@@ -71,6 +71,8 @@
 }
 
 .index-live-title{
+	font-family: "Microsoft YaHei UI";
+	font-weight:600;
     position: relative;
     left:55px;
 
@@ -165,6 +167,8 @@
 }
 
 .index-history-title{
+	font-family: "Microsoft YaHei UI";
+	font-weight:600;
     position: relative;
     left: 55px;
 
@@ -267,6 +271,7 @@
 
 
 .index-history-info-date {
+	font-family: "Microsoft YaHei UI";
     position: relative;
     top:20px;
 
@@ -275,6 +280,7 @@
 }
 
 .index-history-info-title {
+	font-family: "Microsoft YaHei UI";
     position: relative;
     top: 25px;
 
@@ -288,6 +294,7 @@
 }
 
 .index-history-info-detail {
+	font-family: "Microsoft YaHei UI";
     position: absolute;
     top:110px;
     left:27px;
@@ -301,6 +308,7 @@
 }
 
 .index-history-info-footer {
+	font-family: "Microsoft YaHei UI";
     position: absolute;
     top: 160px;
 
@@ -311,10 +319,12 @@
 }
 
 .index-history-info-from{
+	font-family: "Microsoft YaHei UI";
     left: 50px;
 }
 
 .index-history-info-department{
+	font-family: "Microsoft YaHei UI";
     left: 87px;
 }
 
@@ -337,6 +347,7 @@
 }
 
 .index-history-more-link {
+	font-family: "Microsoft YaHei UI";
     clear: both;
 
     display: block;

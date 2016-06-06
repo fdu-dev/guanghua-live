@@ -143,8 +143,8 @@ body{
 }
 .comment-item{
     margin-left: 12px;
-    padding-bottom:500px;
-    margin-bottom:-500px;
+    padding-bottom:50000px;
+    margin-bottom:-50000px;
     width: 625px;
 }
 .comment-item-head{
@@ -285,6 +285,7 @@ body{
     line-height: 30px;
     font-size: 18px;
     color:#111111;
+    resize:none;
 }
 .reply-submit{
     background: #cdcdcd;
@@ -322,6 +323,7 @@ body{
     line-height: 30px;
     font-size: 18px;
     color:#111111;
+    resize:none;
 }
 .comment-submit{
     background: #55b1e8;

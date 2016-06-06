@@ -4,8 +4,8 @@
 var server = window.localStorage ? localStorage.getItem("serverAddress") : Cookie.read("serverAddress");
 
 
-angular.module('managementModule',[])
-    .controller('ManagementCtrl', function ($scope, $state,$rootScope,$http) {
+angular.module('managementModule', [])
+    .controller('ManagementCtrl', function ($scope, $state, $rootScope, $http) {
         var isLogin = window.localStorage ? localStorage.getItem("isLogin") : Cookie.read("isLogin");
         $scope.userType = window.localStorage ? localStorage.getItem("userType") : Cookie.read("userType");
         if (!(isLogin == "login")) {
@@ -20,13 +20,13 @@ angular.module('managementModule',[])
             $state.go('.edit');
         };
 
-        var deleteItem =  function(vid){
-            for (var i=0;i<$scope.videos.length;i++){
+        var deleteItem = function (vid) {
+            for (var i = 0; i < $scope.videos.length; i++) {
                 if ($scope.videos[i].vid == vid) {
-                    for (var j=i;j<$scope.videos.length-1;j++){
-                        $scope.videos[j] = $scope.videos[j+1];
+                    for (var j = i; j < $scope.videos.length - 1; j++) {
+                        $scope.videos[j] = $scope.videos[j + 1];
                     }
-                    $scope.videos[$scope.videos.length-1] = null;
+                    $scope.videos[$scope.videos.length - 1] = null;
                     $scope.videos.length--;
                     break;
                 }
@@ -34,19 +34,19 @@ angular.module('managementModule',[])
         }
 
         $scope.deleteVideo = function (vid) {
-        	console.log(vid);
-            $http.get(server+'videoDelete?vid='+vid)
-                .success(function(response){
+            console.log(vid);
+            $http.get(server + 'videoDelete?vid=' + vid)
+                .success(function (response) {
                     console.log(response);
                     if (response.error_type == 0) {
-                    	 deleteItem(vid);
-                         layer.msg("已删除！");
-                    }             
+                        deleteItem(vid);
+                        layer.msg("已删除！");
+                    }
                 });
         };
         var username = window.localStorage ? localStorage.getItem("username") : Cookie.read("username");
-        $http.get(server+'videoListGetByUsername?username='+username)
-            .success(function(response){
+        $http.get(server + 'videoListGetByUsername?username=' + username)
+            .success(function (response) {
                 console.log(response);
                 $scope.videos = response.videoList;
             });

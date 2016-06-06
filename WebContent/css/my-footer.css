@@ -2,6 +2,7 @@
 
 
 .footer {
+	font-family: "Microsoft YaHei UI";
     position: relative;
     margin-top: 100px;
     margin-left: auto;
@@ -14,6 +15,7 @@
 }
 
 .footer-link {
+	font-family: "Microsoft YaHei UI";
     text-decoration: none;
     color:rgb(132,132,132);
 }

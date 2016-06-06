@@ -27,7 +27,7 @@ angular.module('commentModule',[])
                                 total = response.total;
                                 for (var i=0;i<commentList.length;i++) {
                                     $scope.items[start+i]={
-                                        index: i,
+                                        index: start+i,
                                         cid: commentList[i].cid,
                                         commentedId:commentList[i].commentedId,
                                         headImg:commentList[i].headImg,
@@ -69,12 +69,12 @@ angular.module('commentModule',[])
                     }
 
                     var replys;
-                    console.log(server+"/commentListGet?vid="+$routeParams.vid+"&commentedId="+item.cid);
-                    $http.get(server+"/commentListGet?vid="+$routeParams.vid+"&commentedId="+item.cid).success(function(response){
+                    console.log(server+"commentListGet?vid="+$routeParams.vid+"&commentedId="+item.cid);
+                    $http.get(server+"commentListGet?vid="+$routeParams.vid+"&commentedId="+item.cid).success(function(response){
                         replys = response.commentList;
 
                         for (var i=0;i<replys.length;i++) {
-                            replys[i].time = replys[i].time.toString().split('T')[0]+" "+replys[i].time.toString().split('T')[0];
+                            replys[i].time = replys[i].time.toString().split('T')[0]+" "+replys[i].time.toString().split('T')[1];
                         }
 
 
@@ -124,17 +124,22 @@ angular.module('commentModule',[])
 
                                 var newIndex = $scope.items.length;
                                 var newComment = response.comment;
-                                $scope.items[newIndex] = {
-                                    index: newIndex,
-                                    cid: newComment.cid,
-                                    commentedId:0,
-                                    headImg:newComment.headImg,
-                                    message: newComment.message,
-                                    time: newComment.time.toString().split('T')[0]+" "+newComment.time.toString().split('T')[1],
-                                    uid:newComment.uid,
-                                    username: newComment.username,
-                                    vid:newComment.vid,
-                                    replys: []}
+                                var obj = {
+                                        index: 0,
+                                        cid: newComment.cid,
+                                        commentedId:0,
+                                        headImg:newComment.headImg,
+                                        message: newComment.message,
+                                        time: newComment.time.toString().split('T')[0]+" "+newComment.time.toString().split('T')[1],
+                                        uid:newComment.uid,
+                                        username: newComment.username,
+                                        vid:newComment.vid,
+                                        replys: []};
+                                for (var i=newIndex;i>0;i--){
+                                	$scope.items[i] = $scope.items[i-1];
+                                	$scope.items[i].index = i;
+                                }
+                                $scope.items[0] = obj;
                             }else{
                             	layer.msg(response.error_message);
                             }

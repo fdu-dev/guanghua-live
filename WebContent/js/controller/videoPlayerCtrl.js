@@ -41,7 +41,7 @@ angular.module('videoModule', ['ngRoute'])
 //                window.playerInterval = window.setInterval(function(){console.log(window.player.current)}, 1000);
                 
                 $http.get(server+"demooListGet?vid="+$routeParams.vid+"&time=0").success(function(response){
-                    //   console.log(response);
+                       console.log(response);
                     var danmuList=[];
                     for (var i=0;i<response.demooList.length;i++){
                         danmuList[i] =  JSON.parse(response.demooList[i].message);

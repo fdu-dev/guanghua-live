@@ -1,5 +1,4 @@
 package cn.edu.fudan.anniversary.dao;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,13 +13,10 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate4.HibernateCallback;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
-
-import cn.edu.fudan.live.bean.Comment;
 
 /**
  * Dao层接口的实现类 许多人习惯根据不多的业务逻辑定义不同的DAO层接口，如UserDAO,CommentDAO等等，

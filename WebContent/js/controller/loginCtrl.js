@@ -53,7 +53,14 @@ angular.module('loginModule', [])
                         //alert(JSON.stringify(response.user));
                         sessionStorage.setItem('user', JSON.stringify(response.user));
                         $('#centerBtn').show();
-                        $rootScope.isLogin = true;                                             
+                        $rootScope.isLogin = true;           
+                        if (window.localStorage) {
+                            console.log("localStorage ", "login");
+                            localStorage.setItem("isLogin", "login");
+                        } else {
+                            console.log("cookie");
+                            Cookie.write("isLogin", "login");
+                        }
                         $location.path('/app/main');
                     }
                 })

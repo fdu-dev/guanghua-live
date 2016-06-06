@@ -58,13 +58,35 @@ app.run(['$rootScope', '$http', '$cookies', function ($rootScope, $http, $cookie
     var server = "http://localhost:8080/GuangHuaLive/";
     if (window.localStorage) {
         console.log("localStorage ",server);
-        localStorage.clear();
         localStorage.setItem("serverAddress", server);
     } else {
         console.log("cookie");
         Cookie.write("serverAddress", server);
     }
 
+    var isLogin = window.localStorage ? localStorage.getItem("isLogin") : Cookie.read("isLogin");
+    console.log(isLogin);
+
+    if (!(isLogin == "login")){
+        if (window.localStorage) {
+            console.log("localStorage ");
+            localStorage.setItem("isLogin", "offline");
+        } else {
+            console.log("cookie");
+            Cookie.write("isLogin", "offline");
+        }
+    } else {
+        if (window.localStorage) {
+            console.log("localStorage ", "login");
+            localStorage.setItem("isLogin", "login");
+        } else {
+            console.log("cookie");
+            Cookie.write("isLogin", "login");
+        }
+        $('#centerBtn').show();
+    }
+    
+    
     layer.ready(function () {
 
     });
