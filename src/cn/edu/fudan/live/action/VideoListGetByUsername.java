@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.http.HttpResponse;
 import org.apache.struts2.ServletActionContext;
@@ -39,7 +40,18 @@ public class VideoListGetByUsername extends ActionSupport {
 		params.add(username);
 		ValidateService.ValidateNecessaryArguments(params);
 
-		videoList = videoService.getVideoByUsername(username);
+		User user = null;
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		user = (User) session.getAttribute("user");
+		
+		if (user != null) {
+			if (user.getType() == -1) {
+				videoList = videoService.getVideoList(0, 0);
+			}
+		}
+		if (videoList == null) {
+			videoList = videoService.getVideoByUsername(username);			
+		}
 		return SUCCESS;
 	}
 

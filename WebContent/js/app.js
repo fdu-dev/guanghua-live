@@ -54,7 +54,7 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
 app.run(['$rootScope', '$http', '$cookies', function ($rootScope, $http, $cookies) {
     $rootScope.isLogin = false;
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
-//    var server = "http://192.168.1.122:8080/GuangHuaLive/";
+//    var server = "http://dev.weixin.tunnel.qydev.com/GuangHuaLive/";
     var server = "http://localhost:8080/GuangHuaLive/";
     if (window.localStorage) {
         console.log("localStorage ",server);

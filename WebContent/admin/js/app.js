@@ -70,6 +70,7 @@ app.run(['$rootScope', '$http', '$cookies', function ($rootScope, $http, $cookie
 //    var server = "http://192.168.1.122:8080/GuangHuaLive/";
     //var server = "http://139.129.10.20:8080/GuangHuaLive/";
     var server = "http://localhost:8080/GuangHuaLive/";
+//    var server = "http://dev.weixin.tunnel.qydev.com/GuangHuaLive/";
     if (window.localStorage) {
         console.log("localStorage ", server);
         localStorage.setItem("serverAddress", server);
