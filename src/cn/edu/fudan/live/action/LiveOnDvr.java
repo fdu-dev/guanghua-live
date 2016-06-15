@@ -31,6 +31,7 @@ public class LiveOnDvr extends ActionSupport {
 
 	private String app; // identify specific user
 	private String stream;
+	private String file;
 
 	private Integer error_type = WarnReminderConfiguration.SUCCESS_CODE;
 	private String error_message = WarnReminderConfiguration.SUCCESS;
@@ -48,7 +49,9 @@ public class LiveOnDvr extends ActionSupport {
 		Video video = videoService.getLiveByUsernameAndKeyAndType(app, stream, 4);
 		if (video != null) {
 			video.setType(1);
-			video.setUrl(WarnReminderConfiguration.HTTP_URL + app + "/" + stream + ".flv");
+			String filename = file.substring(file.lastIndexOf("/")+1, file.length());
+//			video.setUrl(WarnReminderConfiguration.HTTP_URL + app + "/" + stream + ".flv");
+			video.setUrl(WarnReminderConfiguration.HTTP_URL + app + "/" + filename);
 			videoService.updateVideo(video);
 			
 			return SUCCESS;
@@ -148,7 +151,20 @@ public class LiveOnDvr extends ActionSupport {
 	public void setLiveKeyService(ILiveKeyService liveKeyService) {
 		this.liveKeyService = liveKeyService;
 	}
-	
-	
+
+	public String getFile() {
+		return file;
+	}
+
+	public void setFile(String file) {
+		this.file = file;
+	}
+
+	public static void main(String[] args) {
+		
+		String tmp = "./objs/nginx/html/user1-xxc/key-3qe23982309423i423-fdjlkd-14202540687.flv";
+		System.out.println(tmp.substring(tmp.lastIndexOf("/"), tmp.length()));
+		
+	}
 	
 }
