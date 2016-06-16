@@ -46,6 +46,7 @@ public class LiveOnUnpublish extends ActionSupport {
 		params.add(stream);
 		ValidateService.ValidateNecessaryArguments(params);
 		Video video = videoService.getLiveByUsernameAndKeyAndType(app, stream , 2);
+		System.out.println("[LiveOnUnpublish]");
 		if (video != null) {
 			video.setType(4);
 			videoService.updateVideo(video);

@@ -11,6 +11,7 @@ import org.hibernate.criterion.Disjunction;
 import org.hibernate.criterion.Restrictions;
 
 import cn.edu.fudan.anniversary.dao.EntityDAO;
+import cn.edu.fudan.live.action.VideoBulkDelete;
 import cn.edu.fudan.live.bean.Demoo;
 import cn.edu.fudan.live.bean.User;
 import cn.edu.fudan.live.bean.Video;
@@ -163,12 +164,12 @@ public class VideoServiceImpl implements IVideoService{
 				+"from video v inner join user u on v.uid=u.uid "
 				+"where u.username = '" + username + "'  and v.type = " + 1;
 		List<Map> list = entityDAO.findBySql(sql);
-		
+		System.out.println("[VideoService] sql: "+sql);
 		List<Video> videoList = new ArrayList<Video>();
 		
 		for (int i = 0; i < list.size(); i++) {
 			Video v = new Video();
-			Map map = list.get(0);
+			Map map = list.get(i);
 			v.setCoverImg((String) map.get("cover_img"));
 			v.setDescription((String) map.get("description"));
 			v.setFormatTime((Date) map.get("format_time"));
@@ -179,6 +180,7 @@ public class VideoServiceImpl implements IVideoService{
 			v.setVid((int) map.get("vid"));
 			v.setUid((int)map.get("uid"));
 			videoList.add(v);
+			System.out.println("[VideoService] getByUsername : "+v.getTitle());
 		}
 
 		return videoList;

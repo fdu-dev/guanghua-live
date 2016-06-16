@@ -44,6 +44,7 @@ public class LiveOnPublish extends ActionSupport {
 		params.add(stream);
 		ValidateService.ValidateNecessaryArguments(params);
 		Video video = videoService.getLiveByUsernameAndKeyAndType(app, stream, 3);
+		System.out.println("[LiveOnPublish]");
 		if (video != null) {
 			video.setFormatTime(new Date());
 			video.setUrl(WarnReminderConfiguration.RTMP_URL + app + "/" + stream);

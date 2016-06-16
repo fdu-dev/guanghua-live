@@ -45,11 +45,18 @@ public class LiveOnDvr extends ActionSupport {
 		Set<Object> params = new HashSet<Object>();
 		params.add(app);
 		params.add(stream);
+		params.add(file);
 		ValidateService.ValidateNecessaryArguments(params);
 		Video video = videoService.getLiveByUsernameAndKeyAndType(app, stream, 4);
+		
+		System.out.println("[LiveOnDvr] app : "+app);
+		System.out.println("[LiveOnDvr] stream : "+stream);
+		System.out.println("[LiveOnDvr] ile : "+file);
+		
 		if (video != null) {
 			video.setType(1);
 			String filename = file.substring(file.lastIndexOf("/")+1, file.length());
+			System.out.println("[LiveOnDvr] filename is "+filename);
 //			video.setUrl(WarnReminderConfiguration.HTTP_URL + app + "/" + stream + ".flv");
 			video.setUrl(WarnReminderConfiguration.HTTP_URL + app + "/" + filename);
 			videoService.updateVideo(video);

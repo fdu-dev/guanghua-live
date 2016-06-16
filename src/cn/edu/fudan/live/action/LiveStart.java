@@ -47,7 +47,7 @@ public class LiveStart extends ActionSupport {
 		HttpSession session = request.getSession();
 
 		User user = (User) session.getAttribute("user");
-
+		System.out.println("[LiveStart]");
 		if (user == null) {
 			setError_type(101);
 			setError_message("请先登录！");

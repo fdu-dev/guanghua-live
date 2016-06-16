@@ -296,13 +296,13 @@
 .index-history-info-detail {
 	font-family: "Microsoft YaHei UI";
     position: absolute;
-    top:110px;
+    top:78px;
     left:27px;
-
+	height:70px;
     margin-left: auto;
     margin-right: auto;
     width: 170px;
-
+	overflow:hidden;
     font-size: 13px;
     color: rgb(105, 105, 105);
 }
