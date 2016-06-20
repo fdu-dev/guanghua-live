@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.min.js"></script>
 <div class="gallery-history-video-block container">
     <div ng-repeat="date in videos">
         <div class="gallery-history-video-month">
@@ -30,4 +31,5 @@
         <li ng-class="{disabled:curPage==totalPage-1}"><a href='javascript:void(0);' ng-click="gotoPage(curPage+1);">&gt;</a></li>
         <li ng-class="{disabled:curPage==totalPage-1}"><a href='javascript:void(0);' ng-click="gotoPage(totalPage-1);">&gt;&gt;</a></li>
     </ul>
+	<div style="clear:both;height:60px;"></div>
 </div>

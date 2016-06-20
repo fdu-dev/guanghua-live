@@ -1,25 +1,17 @@
 .header {
     background: url("../img/images/GHlive4_01.png");
-    width: 100%;
-    height: 242px;
+    width: 960px;
+    height: 400px;
 }
-.header-img1{
-    float: left;
-    background: url("../img/images/GHlive4_03.png");
-    width: 129px;
-    height: 123px;
-    position: relative;
-    top:119px;
-    left: 273px;
-}
+
 .header-img2{
     float: left;
     background: url("../img/ghlive.png");
     width: 285px;
     height: 87px;
     position: relative;
-    top:155px;
-    left: 273px;
+    top: 255px;
+    left: 330px;
     cursor:pointer;
 }
 .sign-up-btn {
@@ -27,7 +19,7 @@
     font-size: 14px;
     color:#565656;
     position: relative;
-    top:-105px;
+    top:-63px;
     left: 832px;
     width: 45px;
     height:20px;
@@ -39,7 +31,7 @@
 }
 .sign-separator{
     position: relative;
-    top:-125px;
+    top:-83px;
     left: 877px;
     background: #565656;
     width: 2px;
@@ -52,7 +44,7 @@
     font-size: 14px;
     color:#565656;
     position: relative;
-    top:-145px;
+    top:-103px;
     left: 879px;
     width: 45px;
     height:20px;
@@ -78,7 +70,6 @@
     font-size: 16px;
     color:rgba(0,0,0,0.4);
     float: left;
-    font-weight: bold;
     cursor: pointer;
 }
 .switch-item-0:hover {
@@ -97,7 +88,6 @@
     font-size: 16px;
     color:rgba(0,0,0,0.4);
     float: left;
-    font-weight: bold;
     cursor: pointer;
 }
 .switch-item:hover {
@@ -107,7 +97,7 @@
 
 .private-center{
 	position:relative;
-	left:425px;
+	left:550px;
 	top:18px;
 }
 

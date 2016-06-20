@@ -23,7 +23,7 @@
     width: 243px;
     height: 337px;
 
-    background-color: #dc745b;
+    background-color: #59a7b6;
 }
 
 .index-recommend-text-img{
@@ -153,7 +153,7 @@
 }
 
 .index-live-video-fake {
-    border: lightgray 3px dashed;
+    border: white 3px dashed;
 }
 
 
@@ -163,7 +163,6 @@
 .index-history-block{
     /*top:354px;*/
     margin-top: 50px;
-    height: 560px;
 }
 
 .index-history-title{
@@ -294,7 +293,7 @@
 }
 
 .index-history-info-detail {
-	font-family: "Microsoft YaHei UI";
+  font-family: "Microsoft YaHei UI";
     position: absolute;
     top:78px;
     left:27px;
@@ -336,6 +335,7 @@
     top:60px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 60px;
     width: 140px;
     height: 28px;
 
@@ -360,8 +360,7 @@
 
 .index-history-more-link:hover{
     cursor:pointer;
-    background-color: #dc745b;
+    background-color: #66c2d4;
     color:white;
     text-decoration: none;
 }
-

@@ -19,7 +19,6 @@ angular.module('videoModule', ['ngRoute'])
                 $scope.videoDescription = datas.description;
                 $scope.videoFrom = datas.department;
 
-
                 if(window.player){
                 	window.player.destroy();
                     delete(window.player);
