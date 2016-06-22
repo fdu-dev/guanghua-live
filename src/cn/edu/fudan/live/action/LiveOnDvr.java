@@ -41,7 +41,6 @@ public class LiveOnDvr extends ActionSupport {
 	private ILiveKeyService liveKeyService;
 
 	public String execute() throws Exception{
-
 		Set<Object> params = new HashSet<Object>();
 		params.add(app);
 		params.add(stream);
@@ -55,12 +54,15 @@ public class LiveOnDvr extends ActionSupport {
 		
 		if (video != null) {
 			video.setType(1);
+			
 			String filename = file.substring(file.lastIndexOf("/")+1, file.length());
 			System.out.println("[LiveOnDvr] filename is "+filename);
 //			video.setUrl(WarnReminderConfiguration.HTTP_URL + app + "/" + stream + ".flv");
 			video.setUrl(WarnReminderConfiguration.HTTP_URL + app + "/" + filename);
 			videoService.updateVideo(video);
-			
+			LiveKey liveKey = liveKeyService.getLiveKeyByUsername(app);
+			liveKeyService.deleteLiveKey(liveKey);
+
 			return SUCCESS;
 		}
 		else {

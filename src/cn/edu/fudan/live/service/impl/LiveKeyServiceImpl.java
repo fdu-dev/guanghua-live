@@ -1,13 +1,17 @@
 package cn.edu.fudan.live.service.impl;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
 import cn.edu.fudan.anniversary.dao.EntityDAO;
 import cn.edu.fudan.live.bean.LiveKey;
+import cn.edu.fudan.live.bean.Video;
 import cn.edu.fudan.live.service.ILiveKeyService;
 
 @SuppressWarnings({ "rawtypes", "unchecked" })
@@ -55,6 +59,24 @@ public class LiveKeyServiceImpl implements ILiveKeyService{
 	public void updateLiveKey(LiveKey liveKey) {
 		// TODO Auto-generated method stub
 		entityDAO.update(liveKey);
+	}
+
+	@Override
+	public LiveKey getLiveKeyByUsername(String app) {
+		// TODO Auto-generated method stub
+		String sql = "select lk.* "
+				+"from live_key lk inner join user u on lk.uid=u.uid "
+				+"where u.username='" + app + "'";
+		System.out.println(sql);
+		List<Map> list = entityDAO.findBySql(sql);
+		LiveKey lk = new LiveKey();
+		for(Map map: list){
+			lk.setId((int)map.get("id"));
+			lk.setLiveKey((String)map.get("live_key"));
+			lk.setUid((int)map.get("uid"));
+			lk.setVid((int)map.get("vid"));
+		}
+		return lk;
 	}
 	
 }

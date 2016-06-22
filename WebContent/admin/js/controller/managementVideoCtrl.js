@@ -13,7 +13,9 @@ angular.module('managementVideoModule', ['lr.upload'])
             .success(function (response) {
                 $scope.video = response.video;
                 console.log($scope.video.coverImg);
-                $scope.video.coverImg = "http://localhost:8080/GuangHuaLive/"+$scope.video.coverImg;
+                if(!$scope.video.coverImg.startsWith('http')){
+                	$scope.video.coverImg = "http://localhost:8080/GuangHuaLive/"+$scope.video.coverImg;
+                }
                
                 console.log($scope.video.coverImg);
                 $scope.imgUploadData = {

@@ -41,12 +41,13 @@ public class LiveOnUnpublish extends ActionSupport {
 
 	public String execute() throws Exception{
 
+		System.out.println("[LiveOnUnpublish]");
 		Set<Object> params = new HashSet<Object>();
 		params.add(app);
 		params.add(stream);
 		ValidateService.ValidateNecessaryArguments(params);
 		Video video = videoService.getLiveByUsernameAndKeyAndType(app, stream , 2);
-		System.out.println("[LiveOnUnpublish]");
+		
 		if (video != null) {
 			video.setType(4);
 			videoService.updateVideo(video);

@@ -15,4 +15,6 @@ public interface ILiveKeyService {
 	
 	public void updateLiveKey(LiveKey liveKey);
 
+	public LiveKey getLiveKeyByUsername(String app);
+
 }

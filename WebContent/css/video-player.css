@@ -3,7 +3,8 @@ body{
     padding: 0px;
 }
 .wrapper {
-    background: #f0f0f0;
+    /*background: #f0f0f0;*/
+    background: #efe7d2;
     width: 960px;
     margin: auto;
 }

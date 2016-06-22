@@ -70,11 +70,11 @@
     z-index: 3;
 
     display: inline-block;
-    width: 224px;
+    width: 448px;
     height: 194px;
 
     background-color: black;
-    opacity: 0.4;
+    opacity: 0.05;
 }
 
 .gallery-history-img-mask:hover {
@@ -87,7 +87,7 @@
 }
 
 .gallery-history-video-left > .gallery-history-img-mask {
-    left: 224px;
+    /*left: 224px;*/
 }
 
 .gallery-history-video-right > .gallery-history-img-mask {
